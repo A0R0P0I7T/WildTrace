@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildTrace — Visual Asset Contact Sheet</title>
+  <style>
+    :root {
+      --bg: #070c09;
+      --card-bg: rgba(16, 28, 20, 0.7);
+      --card-border: rgba(52, 211, 153, 0.2);
+      --accent: #a3e635;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 40px 24px;
+      line-height: 1.5;
+    }
+    .header {
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(52, 211, 153, 0.15);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(163, 230, 53, 0.15);
+      border: 1px solid rgba(163, 230, 53, 0.35);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 28px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-col;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(163, 230, 53, 0.5);
+    }
+    .card-img-wrap {
+      width: 100%;
+      height: 270px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(52, 211, 153, 0.15);
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-img-wrap img {
+      transform: scale(1.03);
+    }
+    .card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-meta {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(163, 230, 53, 0.15);
+      border: 1px solid rgba(163, 230, 53, 0.4);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      width: fit-content;
+      transition: background 0.2s;
+    }
+    .btn-link:hover {
+      background: rgba(163, 230, 53, 0.3);
+    }
+    .video-section {
+      max-width: 1400px;
+      margin: 48px auto 0;
+      padding: 24px;
+      background: rgba(16, 28, 20, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+    }
+    .video-section h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">DEV Community Hacktoberfest 2026 • Touch Grass</div>
+    <h1>🌿 WildTrace — Visual Asset Contact Sheet</h1>
+    <p class="subtitle">Curated, unedited screenshots and recording captured from live execution on http://localhost:3000 (1440 × 1000 desktop viewport).</p>
+  </div>
+
+  <div class="grid">
+    <!-- Item 1 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/01-landing-page.png" target="_blank">
+          <img src="screenshots/01-landing-page.png" alt="01 Landing Page">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>01. Spatial Landing Page</span>
+          </div>
+          <div class="card-meta">screenshots/01-landing-page.png • 324 KB</div>
+          <div class="card-desc">Hero section featuring Antigravity design aesthetic, core principles double-bezel card, and the Hacktoberfest Touch Grass challenge badge.</div>
+        </div>
+        <a href="screenshots/01-landing-page.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/02-habitat-selection.png" target="_blank">
+          <img src="screenshots/02-habitat-selection.png" alt="02 Habitat Selection">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>02. Habitat Selection Grid</span>
+          </div>
+          <div class="card-meta">screenshots/02-habitat-selection.png • 214 KB</div>
+          <div class="card-desc">Dashboard catalog displaying both the authentic Granite Boulder Bryophyte Study and synthetic demo datasets with explicit amber cautionary badges.</div>
+        </div>
+        <a href="screenshots/02-habitat-selection.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/03-observation-detail.png" target="_blank">
+          <img src="screenshots/03-observation-detail.png" alt="03 Observation Detail">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>03. Habitat Detail & Baseline Visit</span>
+          </div>
+          <div class="card-meta">screenshots/03-observation-detail.png • 434 KB</div>
+          <div class="card-desc">Header view featuring privacy-fuzzed coordinates (~51.44°, -0.27°), environmental metadata badges, and authentic baseline photograph of the damp boulder face.</div>
+        </div>
+        <a href="screenshots/03-observation-detail.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/04-longitudinal-comparison.png" target="_blank">
+          <img src="screenshots/04-longitudinal-comparison.png" alt="04 Longitudinal Comparison">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>04. Computer Vision Stat Cards</span>
+          </div>
+          <div class="card-meta">screenshots/04-longitudinal-comparison.png • 247 KB</div>
+          <div class="card-desc">Image-derived metrics showing 76.5% pixel shift, +12.3% Excess Green Index delta, 79% edge correlation, and mandatory photometric disclosure notes.</div>
+        </div>
+        <a href="screenshots/04-longitudinal-comparison.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/05-framing-warning.png" target="_blank">
+          <img src="screenshots/05-framing-warning.png" alt="05 Framing Warning">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>05. The Scientific Reliability Gate</span>
+          </div>
+          <div class="card-meta">screenshots/05-framing-warning.png • 2.47 MB</div>
+          <div class="card-desc">Core differentiator: automated detection of camera angle displacement halts misleading pixel diff masks and engages Side-by-Side Co-Inspection mode.</div>
+        </div>
+        <a href="screenshots/05-framing-warning.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/06-field-mission.png" target="_blank">
+          <img src="screenshots/06-field-mission.png" alt="06 Field Mission">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>06. "Touch Grass" Field Mission</span>
+          </div>
+          <div class="card-meta">screenshots/06-field-mission.png • 355 KB</div>
+          <div class="card-desc">Grounded AI field intelligence: Gemini 2.5 Flash outputs tentative hydration hypotheses and a tangible action card directing the user to physically touch the moss.</div>
+        </div>
+        <a href="screenshots/06-field-mission.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="card">
+      <div class="card-img-wrap">
+        <a href="screenshots/07-observation-history.png" target="_blank">
+          <img src="screenshots/07-observation-history.png" alt="07 Observation History">
+        </a>
+      </div>
+      <div class="card-content">
+        <div>
+          <div class="card-title">
+            <span>07. Chronological Timeline</span>
+          </div>
+          <div class="card-meta">screenshots/07-observation-history.png • 591 KB</div>
+          <div class="card-desc">Chronological observation timeline tracking multi-visit transitions across changing weather from dry desiccation to saturated hydration.</div>
+        </div>
+        <a href="screenshots/07-observation-history.png" class="btn-link" target="_blank">View Full Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section">
+    <h2>📹 Automated Browser Walkthrough Recording</h2>
+    <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 12px;">
+      A full, high-fidelity browser session walkthrough was autonomously recorded during execution:
+      <br><strong>File:</strong> <code>artifacts/wildtrace-demo/wildtrace-walkthrough.webp</code> (Size: ~10 MB)
+    </p>
+    <a href="wildtrace-walkthrough.webp" class="btn-link" target="_blank">Open Walkthrough Recording Animation ↗</a>
+  </div>
+
+</body>
+</html>

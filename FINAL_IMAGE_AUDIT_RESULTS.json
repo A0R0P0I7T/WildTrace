@@ -1,0 +1,239 @@
+{
+  "auditMetadata": {
+    "projectName": "WildTrace",
+    "evaluationDate": "2026-10-11T14:38:00Z",
+    "evaluator": "Senior Full-Stack, Computer-Vision, AI Evaluation & QA Engineer",
+    "executiveVerdict": "PASS WITH LIMITATIONS",
+    "submissionReadiness": "READY FOR HACKATHON DEMONSTRATION"
+  },
+  "testImageFolder": "C:\\Users\\sahaa\\IntelliJ\\Projects\\WildTrace\\MossImages",
+  "imageInventory": [
+    {
+      "filename": "moss img1.jpeg",
+      "detectedFormat": "PNG (internal signature: 89 50 4E 47, file extension: .jpeg)",
+      "fileSizeBytes": 3766031,
+      "dimensions": { "width": 1448, "height": 1086 },
+      "colorChannels": 3,
+      "colorSpace": "srgb",
+      "exgIndex": 11.79,
+      "luminance": 98.1,
+      "intendedTimeline": "Day 1 Baseline (2026-09-27T10:00:00Z)",
+      "environmentalContext": {
+        "weather": "Morning overcast, high relative humidity (82%)",
+        "moistureEstimate": "damp",
+        "lightingCondition": "diffuse_overcast",
+        "fieldNotes": "Baseline observation of dense bryophyte carpet adhering to damp granite boulder face."
+      }
+    },
+    {
+      "filename": "moss img2.jpeg",
+      "detectedFormat": "PNG (internal signature: 89 50 4E 47, file extension: .jpeg)",
+      "fileSizeBytes": 3674487,
+      "dimensions": { "width": 1448, "height": 1086 },
+      "colorChannels": 3,
+      "colorSpace": "srgb",
+      "exgIndex": 19.01,
+      "luminance": 103.5,
+      "intendedTimeline": "Day 7 Revisit (2026-10-04T10:00:00Z)",
+      "environmentalContext": {
+        "weather": "Partial sun, dry mild breeze (humidity 48%)",
+        "moistureEstimate": "dry",
+        "lightingCondition": "direct_sun",
+        "fieldNotes": "Day 7 revisit of bryophyte patch; slight curling and surface desiccation visible along margins."
+      }
+    },
+    {
+      "filename": "moss img3.jpeg",
+      "detectedFormat": "PNG (internal signature: 89 50 4E 47, file extension: .jpeg)",
+      "fileSizeBytes": 3704529,
+      "dimensions": { "width": 1448, "height": 1086 },
+      "colorChannels": 3,
+      "colorSpace": "srgb",
+      "exgIndex": 15.55,
+      "luminance": 96.9,
+      "intendedTimeline": "Day 14 Revisit (2026-10-11T10:00:00Z)",
+      "environmentalContext": {
+        "weather": "Post-rain overcast skies, high surface moisture",
+        "moistureEstimate": "saturated",
+        "lightingCondition": "diffuse_overcast",
+        "fieldNotes": "Day 14 revisit following intermittent overnight rain; gametophyte carpets appears saturated and dark green."
+      }
+    }
+  ],
+  "pairwiseComparisons": [
+    {
+      "comparisonId": "comp-1791729073660-jz7ps",
+      "pair": "Day 1 Baseline vs Day 7 Revisit",
+      "elapsedDays": 7,
+      "metrics": {
+        "visualDifferencePercentage": 69.7,
+        "excessGreenDelta": 21.9,
+        "structuralSimilarityScore": 0.85,
+        "alignmentConfidence": "LOW",
+        "limitationFlags": [
+          "INCOMPATIBLE_FOR_PIXEL_DIFF",
+          "PERSPECTIVE_SHIFT_DETECTED"
+        ],
+        "pixelDiffMaskActive": false,
+        "sideBySideMandatory": true
+      },
+      "aiInterpretation": {
+        "modelIdentifier": "google/gemini-2.5-flash (via OpenRouter)",
+        "isFallback": false,
+        "observedChangesCount": 2,
+        "ecologicalHypothesesCount": 2,
+        "uncertaintiesCount": 3,
+        "scientificGateCompliance": {
+          "disclosedFramingIncompatibility": true,
+          "avoidedDefinitiveBiologicalClaims": true,
+          "touchGrassMissionProvided": true,
+          "touchGrassMission": "Touch Grass Mission: Return to the exact spot within 3-5 days. Prioritize matching the original distance, angle, and framing of the baseline observation against a stable physical landmark. Retake the photograph from the same precise distance and angle before attempting any further analysis of change. Specifically, touch and assess the turgidity of the bryophyte carpet near the center of the patch to understand its current hydration state."
+        }
+      }
+    },
+    {
+      "comparisonId": "comp-1791729080419-nf8ji",
+      "pair": "Day 7 Revisit vs Day 14 Revisit",
+      "elapsedDays": 7,
+      "metrics": {
+        "visualDifferencePercentage": 70.9,
+        "excessGreenDelta": -9.6,
+        "structuralSimilarityScore": 0.82,
+        "alignmentConfidence": "LOW",
+        "limitationFlags": [
+          "INCOMPATIBLE_FOR_PIXEL_DIFF",
+          "PERSPECTIVE_SHIFT_DETECTED"
+        ],
+        "pixelDiffMaskActive": false,
+        "sideBySideMandatory": true
+      },
+      "aiInterpretation": {
+        "modelIdentifier": "google/gemini-2.5-flash (via OpenRouter)",
+        "isFallback": false,
+        "observedChangesCount": 2,
+        "ecologicalHypothesesCount": 2,
+        "uncertaintiesCount": 3,
+        "scientificGateCompliance": {
+          "disclosedFramingIncompatibility": true,
+          "avoidedDefinitiveBiologicalClaims": true,
+          "touchGrassMissionProvided": true,
+          "touchGrassMission": "Touch Grass Mission: Return to the exact spot, carefully matching the distance, angle, and framing of the original October 4th photograph using a stable physical landmark (e.g., the specific lichen pattern on the lower left of the trunk, or a distinctive bark crevice) before drawing conclusions on any biological changes. Specifically, gently press the moss in the central patch to assess its turgidity."
+        }
+      }
+    },
+    {
+      "comparisonId": "comp-1791729086839-8a7iu",
+      "pair": "Day 1 Baseline vs Day 14 Revisit",
+      "elapsedDays": 14,
+      "metrics": {
+        "visualDifferencePercentage": 76.5,
+        "excessGreenDelta": 12.3,
+        "structuralSimilarityScore": 0.79,
+        "alignmentConfidence": "LOW",
+        "limitationFlags": [
+          "INCOMPATIBLE_FOR_PIXEL_DIFF",
+          "PERSPECTIVE_SHIFT_DETECTED"
+        ],
+        "pixelDiffMaskActive": false,
+        "sideBySideMandatory": true
+      },
+      "aiInterpretation": {
+        "modelIdentifier": "google/gemini-2.5-flash (via OpenRouter)",
+        "isFallback": false,
+        "observedChangesCount": 2,
+        "ecologicalHypothesesCount": 2,
+        "uncertaintiesCount": 2,
+        "scientificGateCompliance": {
+          "disclosedFramingIncompatibility": true,
+          "avoidedDefinitiveBiologicalClaims": true,
+          "touchGrassMissionProvided": true,
+          "touchGrassMission": "Touch Grass Mission: Return to the exact spot and, using a stable physical landmark (e.g., a specific lichen patch or bark crevice), meticulously match the distance, angle, and framing of the previous photographs. Focus on retaking the photograph from the *exact* same perspective before attempting to draw conclusions about moss hydration or growth. Specifically, inspect the turgidity and 'crunchiness' of the central moss patch by gently touching it."
+        }
+      }
+    }
+  ],
+  "openRouterInferenceStatus": {
+    "providerName": "OpenRouterProvider",
+    "configuredModel": "google/gemini-2.5-flash",
+    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "liveInferenceVerified": true,
+    "multimodalPayloadSupport": "Verified (both baseline & target images encoded as base64 Data URLs)",
+    "zodSchemaValidation": "AIInterpretationSchema passed 100%",
+    "offlineFallback": "DeterministicHeuristicProvider verified and active when credentials absent"
+  },
+  "automatedQualityGates": {
+    "testSuiteRunner": {
+      "command": "npm test",
+      "status": "PASS",
+      "exitCode": 0,
+      "totalDurationSeconds": 70.38,
+      "suites": [
+        { "name": "Synthetic Fixture Generation", "status": "PASS", "durationSeconds": 1.56 },
+        { "name": "Photometric & Computer Vision Engine Unit Tests", "status": "PASS", "durationSeconds": 2.81 },
+        { "name": "Repository Image Inventory & Vision Engine Stress Tests", "status": "PASS", "durationSeconds": 3.99 },
+        { "name": "API Routes, Security & Lifecycle Integration Tests", "status": "PASS", "durationSeconds": 4.05 },
+        { "name": "Autonomous End-to-End User Journeys A-E (Live Server)", "status": "PASS", "durationSeconds": 15.01 },
+        { "name": "OpenRouter Multimodal Vision & Gateway Tests", "status": "PASS", "durationSeconds": 8.74 },
+        { "name": "End-to-End User Verification Journey", "status": "PASS", "durationSeconds": 4.32 },
+        { "name": "Moss Real Image Longitudinal E2E Audit & AI Validation", "status": "PASS", "durationSeconds": 29.90 }
+      ]
+    },
+    "linter": {
+      "command": "npm run lint",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "typeCheck": {
+      "command": "npx tsc --noEmit",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "productionBuild": {
+      "command": "npm run build",
+      "status": "PASS",
+      "exitCode": 0
+    },
+    "dockerContainer": {
+      "buildStatus": "PASS (wildtrace-test:latest built cleanly)",
+      "startupStatus": "PASS (container started and served HTTP 200 on port 3001)",
+      "volumePersistenceStatus": "PASS (verified SQLite & uploaded images persisted across container restart)"
+    }
+  },
+  "defectsDiscoveredAndFixed": [
+    {
+      "defectId": "DEF-001",
+      "severity": "High (Scientific Reliability)",
+      "component": "src/lib/ai/providers/openrouter.ts & src/lib/ai/heuristicFallback.ts",
+      "issue": "When image framing or camera distance varied significantly (>50% visual difference or structural similarity < 0.45), models previously risked hallucinating biological growth or severe dieback based purely on photometric shift.",
+      "fix": "Implemented strict comparison-confidence gate. For incompatible pairs, system prompt and heuristic fallback explicitly forbid claiming verified moss growth/dieback, declare that framing prevents directional comparison, and generate Touch Grass Missions focused on matching distance and landmarks."
+    },
+    {
+      "defectId": "DEF-002",
+      "severity": "Medium (UI Accuracy)",
+      "component": "src/components/comparison/ComparisonViewer.tsx",
+      "issue": "Elapsed interval display forced '1 days' even when observations were recorded on the same day (< 1 day), producing inaccurate time intervals.",
+      "fix": "Updated formatting logic to display '< 1 day' when 0 days elapsed, and singular '1 day' vs plural 'X days'."
+    },
+    {
+      "defectId": "DEF-003",
+      "severity": "Medium (UX & Scientific Disclosure)",
+      "component": "src/components/comparison/ComparisonViewer.tsx",
+      "issue": "Incompatible framing warning banner hardcoded 'structural correlation < 45%', which was inaccurate when triggered by perspective shifts or visual difference > 50%.",
+      "fix": "Rewrote warning to explain that visible differences in texture and green coverage cannot support a reliable directional comparison due to framing/perspective differences, and direct pixel subtraction is disabled to prevent visual ghosting."
+    }
+  ],
+  "limitationsAndBlockedItems": [
+    {
+      "item": "Historical Observation Date Picker in Upload UI",
+      "type": "UI Limitation",
+      "status": "DOCUMENTED LIMITATION",
+      "details": "The backend observation API fully supports custom 'recordedAt' timestamps, but ObservationModal.tsx automatically stamps new Date().toISOString() without offering an interactive date picker input for backdated field logs."
+    },
+    {
+      "item": "Real Camera Misalignment in Moss Test Set",
+      "type": "Physical Input Confound",
+      "status": "DOCUMENTED CONFOUND",
+      "details": "All three user-supplied moss photographs exhibit camera perspective shifts and framing disparities (>69% visual difference). The vision engine correctly detected this, forced LOW alignment confidence, and engaged the scientific gate."
+    }
+  ]
+}

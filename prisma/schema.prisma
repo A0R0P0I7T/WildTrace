@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../data/wildtrace.db"
+}
+
+model Site {
+  id            String        @id @default(cuid())
+  name          String
+  habitatType   String        // tree_bark, soil_bed, grass_patch, moss_rock, water_edge, garden_quadrant
+  description   String        @default("")
+  latitude      Float?        // Fuzzed to ~2 decimal places for privacy
+  longitude     Float?        // Fuzzed to ~2 decimal places for privacy
+  locationLabel String?       @default("Outdoor Field Site")
+  isDemoSite    Boolean       @default(false)
+  isSynthetic   Boolean       @default(false)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  observations  Observation[]
+  comparisons   ComparisonPair[]
+
+  @@index([createdAt])
+}
+
+model Observation {
+  id                    String            @id @default(cuid())
+  siteId                String
+  recordedAt            DateTime          @default(now())
+  imagePath             String
+  thumbnailPath         String?
+  weatherNotes          String            @default("")
+  fieldNotes            String            @default("")
+  environmentalMetadata String            @default("{}") // JSON serialized
+  createdAt             DateTime          @default(now())
+
+  site                  Site              @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  baselineComparisons   ComparisonPair[]  @relation("BaselineObservations")
+  targetComparisons     ComparisonPair[]  @relation("TargetObservations")
+
+  @@index([siteId, recordedAt])
+}
+
+model ComparisonPair {
+  id                         String            @id @default(cuid())
+  siteId                     String
+  baselineObservationId      String
+  targetObservationId        String
+  visualDifferencePercentage Float             @default(0.0) // Image-derived photometric frame shift
+  excessGreenDelta           Float             @default(0.0) // Image-derived ExG shift
+  structuralSimilarityScore  Float             @default(0.0) // Edge correlation score
+  diffMaskPath               String
+  alignmentConfidence        String            @default("HIGH") // HIGH, MEDIUM, LOW
+  limitationFlags            String            @default("[]")   // JSON serialized
+  createdAt                  DateTime          @default(now())
+
+  site                       Site              @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  baselineObservation        Observation       @relation("BaselineObservations", fields: [baselineObservationId], references: [id], onDelete: Cascade)
+  targetObservation          Observation       @relation("TargetObservations", fields: [targetObservationId], references: [id], onDelete: Cascade)
+  interpretation             AIInterpretation?
+
+  @@index([siteId])
+  @@index([baselineObservationId, targetObservationId])
+}
+
+model AIInterpretation {
+  id                   String         @id @default(cuid())
+  comparisonPairId     String         @unique
+  modelIdentifier      String         @default("Qwen2-VL-2B-Instruct")
+  observedChanges      String         @default("[]") // JSON serialized array
+  ecologicalHypotheses String         @default("[]") // JSON serialized array
+  uncertainties        String         @default("[]") // JSON serialized array
+  nextVisitPrompt      String
+  isFallback           Boolean        @default(false)
+  createdAt            DateTime       @default(now())
+
+  comparisonPair       ComparisonPair @relation(fields: [comparisonPairId], references: [id], onDelete: Cascade)
+}
